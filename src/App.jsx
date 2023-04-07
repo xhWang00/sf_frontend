@@ -1,33 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import axios from 'axios';
+import { useState, useEffect } from 'react'
+import { ReactCompareSlider, ReactCompareSliderImage } from 'react-compare-slider';
+
+const BASEURL = 'http://127.0.0.1:5000/frame/2011_09_26_drive_0052_extract.json/0000000000';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [states, setStates] = useState({});
+
+  useEffect(() => {
+    axios.get(BASEURL)
+      .then(res => setStates(res.data))
+      .catch(err => console.log(err));
+  }, []);
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <div>
+      <h1>2011_09_26_drive_0052_extract</h1>
+      <ReactCompareSlider
+        itemOne={<ReactCompareSliderImage src="http://127.0.0.1:5000/raw/2011_09_26_drive_0052_extract/image_03/data/0000000000.png" alt="Image one" />}
+        itemTwo={<ReactCompareSliderImage src="http://127.0.0.1:5000/raw/2011_09_26_drive_0052_extract/image_03/data/edges/0000000000.png" alt="Image two" />}
+      />
+      <p>Computer vision: <b>Not safe</b></p>
+      <p>Lidar: <b>Safe</b></p>
     </div>
   )
 }
