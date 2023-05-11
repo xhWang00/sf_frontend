@@ -30,23 +30,31 @@ function App() {
   }
     return (
       <div>
-        <h1>2011_09_26_drive_0052_extract</h1>
+        <h1>Yomo Demo 2023</h1>
         <div className="image-container">
-          <div className="react-compare-slider">
-            <ReactCompareSlider
-              itemOne={
-                <ReactCompareSliderImage
-                  src={`http://127.0.0.1:5000/video_feed/edgless`}
-                  alt="Image one"
-                />
-              }
-              itemTwo={
-                <ReactCompareSliderImage
-                  src={`http://127.0.0.1:5000/video_feed/edges`}
-                  alt="Image two"
-                />
-              }
-            />
+          <div className="col-container">
+            <div className="react-compare-slider">
+              <ReactCompareSlider
+                itemOne={
+                  <ReactCompareSliderImage
+                    src={`http://127.0.0.1:5000/video_feed/edgless`}
+                    alt="Image one"
+                  />
+                }
+                itemTwo={
+                  <ReactCompareSliderImage
+                    src={`http://127.0.0.1:5000/video_feed/edges`}
+                    alt="Image two"
+                  />
+                }
+              />
+            </div>
+            <div className="result">
+              <img className='result-image'
+              src={`http://127.0.0.1:5000/video_feed/results`}
+              alt= "Result"
+              />
+            </div>
           </div>
           <img
             className="third-image"
@@ -54,12 +62,6 @@ function App() {
             alt="Image three"
           />
         </div>
-        <p>
-          Computer vision: <b>Not safe</b>
-        </p>
-        <p>
-          Lidar: <b>Safe</b>
-        </p>
       </div>
     );
 }
