@@ -1,0 +1,107 @@
+.image-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.col-container {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.react-compare-slider {
+  flex: 2;
+  margin-right: 20px;
+  margin-bottom: 0px;
+}
+
+.result{
+
+  flex: 2;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.result-image{
+  border: 2px solid gray;
+  border-radius: 5px;
+  max-width: 60%;
+
+}
+
+.third-image {
+  flex: 1;
+  max-width: 100%;
+  height: 400px; /* Set the desired height */
+  object-fit: cover;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  }
+  
+  .div1 { grid-area: 1 / 1 / 4 / 4; }
+  .div2 { grid-area: 4 / 1 / 6 / 4; }
+
+  .div3 { 
+    grid-area: 1 / 4 / 6 / 6; 
+  }
+
+  div2 > img  {
+    object-fit: cover;
+    width: 100%;
+    max-height: 100%;
+    grid-row: span 2; /* Adjust the number of rows the image should span */
+    grid-column: span 4;
+
+  }
+
+
+body {
+  background-color: #222;
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 400px;
+}
+
+.button {
+  background-color: #444;
+  border: 1px solid #666;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #666;
+}
+
+h1 {
+  text-align:center;
+  font-family: Arial, Helvetica, sans-serif;
+}
